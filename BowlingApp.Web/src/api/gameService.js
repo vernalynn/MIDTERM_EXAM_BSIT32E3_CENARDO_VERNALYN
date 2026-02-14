@@ -13,32 +13,30 @@ const API_BASE_URL = "http://localhost:5000/api/game"; // Update port if necessa
 export const createGame = async (playerNames) => {
     // TODO: Call POST /api/game with playerNames
     // Example:
-    // const response = await fetch(API_BASE_URL, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(playerNames)
-    // });
-    // return await response.json();
-    throw new Error("createGame API not implemented yet!");
+    const response = await fetch(API_BASE_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(playerNames)
+    });
+    return await response.json();
 };
 
 export const getGame = async (gameId) => {
     // TODO: Call GET /api/game/{gameId}
     // Example:
-    // const response = await fetch(`${API_BASE_URL}/${gameId}`);
-    // return await response.json();
-    throw new Error("getGame API not implemented yet!");
+    const response = await fetch(`${API_BASE_URL}/${gameId}`);
+    return await response.json();
 };
 
 export const rollBall = async (gameId, playerId, pins) => {
     // TODO: Call POST /api/game/{gameId}/roll
     // Body: { playerId, pins }
     // Example:
-    // const response = await fetch(`${API_BASE_URL}/${gameId}/roll`, {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ playerId, pins })
-    // });
-    // return await response.json();
-    throw new Error("rollBall API not implemented yet!");
+    const response = await fetch(`${API_BASE_URL}/${gameId}/roll`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ playerId, pins })
+    });
+    // Backend returns 200 OK with no body, so we don't need to parse JSON
+    return response.ok;
 };
